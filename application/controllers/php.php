@@ -1,29 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
-
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index()
-	{
-		$this->load->view('welcome_message');
-	}
-
-	public function login($idioma=null)
+class Php extends CI_Controller {
+   
+   function login($idioma=null)
    {
          
       //   $this->config->set_item('language', 'spanish');      //   Setear dinámicamente el idioma que deseamos que ejecute nuestra aplicación
@@ -31,8 +10,8 @@ class Welcome extends CI_Controller {
          $this->load->view('login');      //   Por lo tanto le presentamos la pantalla del formulario de ingreso.
       }
       else{                        //   Si el usuario ya pasó por la pantalla inicial y presionó el botón "Ingresar"
-         $this->form_validation->set_rules('maillogin','nombreProf','required');      //   Configuramos las validaciones ayudandonos con la librería form_validation del Framework Codeigniter
-         $this->form_validation->set_rules('passwordlogin','contrasenaProf','required');
+         $this->form_validation->set_rules('maillogin','prof_nombre','required');      //   Configuramos las validaciones ayudandonos con la librería form_validation del Framework Codeigniter
+         $this->form_validation->set_rules('passwordlogin','prof_pass','required');
          if(($this->form_validation->run()==FALSE)){            //   Verificamos si el usuario superó la validación
             $this->load->view('login');                     //   En caso que no, volvemos a presentar la pantalla de login
          }
@@ -50,3 +29,4 @@ class Welcome extends CI_Controller {
       }
    }
 }
+?>
