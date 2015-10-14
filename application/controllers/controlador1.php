@@ -97,5 +97,28 @@ class Controlador1 extends CI_Controller{
 	
 	//$this->load->view('Pagina/footer');
 	}
+   function crearficha() {
+  $this->load->helper('form');
+  $this->load->library('form_validation');
+
+  $this->form_validation->set_rules('nombre', 'Nombre', 'required');
+  $this->form_validation->set_rules('profesional', 'Profesional', 'required');
+  $this->form_validation->set_rules('fecha', 'Fecha', 'required');
+  $this->form_validation->set_rules('laboratorio', 'Laboratorio', 'required');
+  $this->form_validation->set_rules('comentario', 'Comentario', 'required');
+
+  if ($this->form_validation->run() == FALSE) {
+    $this->load->view('usuario/crear');
+  } else {
+    $nombre = $this->input->post('nombre');
+    $profesional = $this->input->post('profesional');
+    $fecha = $this->input->post('fecha');
+    $laboratorio = $this->input->post('laboratorio');
+    $comentario = $this->input->post('comentario');
+    $this->load->model('ficha_model');
+    $this->ficha_model->crearFicha($nombre,$profesional, $fecha, $laboratorio, $comentario);
+    echo 'Ficha insertada';
+  }
+}
 }
 ?>
