@@ -31,7 +31,35 @@ class Controlador1 extends CI_Controller{
 		$this->load->view('Pagina/preguntas');
 		$this->load->view('Pagina/footer');
 	}
+    public function formulario(){
 
+		$this->load->view('Pagina/ingreso');
+		$this->load->view('Pagina/footer');
+	}
+
+    public function validar(){	
+
+		//echo "sadsadsadsadasdasd";
+
+		$this->form_validation->set_rules('nombre','Nombre de Usuario','required|trim');
+		$this->form_validation->set_rules('rut','Rut','required|trim');
+		
+		$this->form_validation->set_message('required','El campo %s Es Obligatorio');
+		
+		if ($this->form_validation->run() == FALSE){
+			
+			$this->formulario();
+		
+		}
+		else
+		{
+
+			echo "Totos los datos estan ok: ".$this->input->post('nombre');
+			//$this->load->view('formsuccess');
+		}
+	}
+    
+    
 	function login($idioma=null){
 
 		   //   $this->config->set_item('language', 'spanish');      //   Setear dinámicamente el idioma que deseamos que ejecute nuestra aplicación
