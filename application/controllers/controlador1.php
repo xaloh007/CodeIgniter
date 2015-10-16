@@ -7,7 +7,9 @@ class Controlador1 extends CI_Controller{
 		$this->load->helper('form');
 		$this->load->model('len_model');
 		$this->load->model('nino_model');
-
+		 $this->load->library('grocery_crud');
+		 $this->load->helper('url');
+		  $this->load->database();
 	}
 	function index(){
 		$this->load->helper('url');
@@ -201,5 +203,61 @@ class Controlador1 extends CI_Controller{
     
   }
 }
+
+function administracion()
+  {
+    try{
+ 
+    /* Creamos el objeto */
+    $crud = new grocery_CRUD();
+ 
+    /* Seleccionamos el tema */
+    $crud->set_theme('flexigrid');
+ 
+    /* Seleccionmos el nombre de la tabla de nuestra base de datos*/
+    $crud->set_table('ft_nino');
+ 
+    /* Le asignamos un nombre */
+    $crud->set_subject('Fichas_Tratamiento');
+ 
+    /* Asignamos el idioma español */
+    $crud->set_language('spanish');
+ 
+    /* Aqui le decimos a grocery que estos campos son obligatorios */
+    $crud->required_fields(
+      'id',
+      'ftn_nombre',
+      'ftn_profesional',
+      'ftn_fecha',
+      'ftn_lab',
+      'ftn_com'
+    );
+ 
+    /* Aqui le indicamos que campos deseamos mostrar */
+    $crud->columns(
+   		'id',
+      'ftn_nombre',
+      'ftn_profesional',
+      'ftn_fecha',
+      'ftn_lab',
+      'ftn_com'
+    );
+ 
+    /* Generamos la tabla */
+    $output = $crud->render();
+ 		$this->load->view('Pagina/consulta');
+		
+    /* La cargamos en la vista situada en
+    /applications/views/productos/administracion.php */
+    $this->load->view('Pagina/administracion', $output);
+	 $this->load->view('Pagina/footer');
+    }catch(Exception $e){
+      /* Si algo sale mal cachamos el error y lo mostramos */
+      show_error($e->getMessage().' --- '.$e->getTraceAsString());
+    }
+  }
+
+
+
 }
 ?>

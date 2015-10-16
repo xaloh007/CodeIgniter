@@ -37,7 +37,7 @@
 				<li class="active"><a href="http://localhost/codeigniter/index.php/controlador1" accesskey="1" title="">Inicio</a></li>
 				<li><a href="http://localhost/codeigniter/index.php/controlador1/login" accesskey="2" title="">Iniciar Sesion</a></li>
 				<li><a href="http://localhost/codeigniter/index.php/controlador1/ingreso" accesskey="3" title="">Ingreso de Ficha</a></li>
-				<li><a href="http://localhost/codeigniter/index.php/controlador1/consulta" accesskey="4" title="">Consultar Ficha</a></li>
+				<li><a href="http://localhost/codeigniter/index.php/controlador1/administracion" accesskey="4" title="">Consultar Ficha</a></li>
 				<li><a href="http://localhost/codeigniter/index.php/controlador1/modificar" accesskey="5" title="">Modificar Ficha</a></li>
 				<li><a href="http://localhost/codeigniter/index.php/controlador1/preguntas" accesskey="6" title="">Ficha de Tratamiento</a></li>
 
