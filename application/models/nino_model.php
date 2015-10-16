@@ -7,11 +7,24 @@ class Nino_model extends CI_Model{
 		parent::__construct();
 	}
 
-	public function get_nombre(){
+	public function crearAnam($nombre,$edad,$rut,$sexo,$fam,$escolaridad,$colegio,$direccion,$comuna,$region,$tratamiento,$notas){
+		$data = array(
+			'ann_nombre' => $nombre,
+			'ann_edad' => $edad,
+			'ann_rut' => $rut,
+			'ann_sexo' => $sexo,
+			'ann_familia' => $fam,
+			'ann_escolaridad' => $escolaridad,
+			'ann_colegio' => $colegio,
+			'ann_dir' => $direccion,
+			'ann_comuna' => $comuna,
+			'ann_region' => $region,
+			'ann_pTratamiento' => $tratamiento,
+			'ann_notas' => $notas, 
+		);
+		
+		$this->db->insert('anam_nino',$data);
 
-		$consulta = $this->db->query('select * from anam_nino');
-
-		return $consulta->result();
 	}
 
 }

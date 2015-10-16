@@ -51,49 +51,35 @@
 
 	Nombre: <br/>
 	<?= form_input('nombre',@set_value('nombre'),'class="input"');?><br/>
-	
 	Edad:	<br/>
-	<?= form_input('edad',@set_value('rut'),'class="input"');?><br/>
-	
-	Fecha de nacimiento: <br/>
-	<input type="date" name="nacimiento"><br/>
-	
-	Masculino<?= form_radio('sexo','M',false,'class="radio"');?>
-	Femenino<?= form_radio('sexo','F',false,'class="radio"');?><br/>
-	
-	Familia: <br/>
-	Padre:<?= form_checkbox('padre', 'aceptar', FALSE);?> 
-	Madre:<?= form_checkbox('padre', 'aceptar', FALSE);?>
-	Hermanos:<?= form_checkbox('padre', 'aceptar', FALSE);?>
-	Cuantos: <?= form_dropdown('seleccione',array('1'=>'1','2'=>'2','3'=>'3','4'=>'4' ),array('1'),'class="select"');?><br/>
-
+	<?= form_input('edad',@set_value('edad'),'class="input"');?><br/>
 	RUT:	<br/>
 	<?= form_input('rut',@set_value('rut'),'class="input"');?><br/> 
-	
 	Fecha de nacimiento: <br/>
 	<input type="date" name="nacimiento"><br/>
-	
-	
+	Sexo:
+	Masculino<?= form_radio('sexo','M',false,'class="radio"');?>
+	Femenino<?= form_radio('sexo','F',false,'class="radio"');?><br/>
+	Familia: <br/>
+	<?= form_input('fam',@set_value('fam'),'class="input"');?><br/>
 	Escolaridad:	<br/>
 	<?= form_input('escolaridad',@set_value('rut'),'class="input"');?><br/>
 	Colegio:	<br/>
 	<?= form_input('colegio',@set_value('rut'),'class="input"');?><br/>
 	Direccion:	<br/>
 	<?= form_input('direccion',@set_value('rut'),'class="input"');?><br/>
+	Comuna:	<br/>
+	<?= form_input('comuna',@set_value('rut'),'class="input"');?><br/>
+	Region:	<br/>
+	<?= form_input('region',@set_value('rut'),'class="input"');?><br/>
 	Tratamientos previos:	<br/>
 	<?= form_textarea('tratamiento',@set_value('rut'),'class="input"');?><br/>
 	Notas:	<br/>
 	<?= form_textarea('notas',@set_value('rut'),'class="input"');?><br/>
-	
-	
 	<?= form_submit('submit','Enviar Datos','class="submit"');?>
-	
 	<?= form_close(); ?>
-
 	<hr/>
-	
 	<h3>Posibles  Errores</h3>
-
 	<?= validation_errors();?>
 
 </body>
