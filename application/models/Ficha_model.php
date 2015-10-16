@@ -5,16 +5,18 @@ class Ficha_model extends CI_Model {
     parent::__construct();
   }
 
-  public function crearFicha($nombre,$profesional, $fecha, laboratorio, $comentario) {
+  public function crearFicha( $nombre,$profesional,$fecha,$laboratorio,$comentario) {
     $data = array(
-      'nombre' => $nombre,
-      'profesional' => $profesional,
-      'fecha' => $fecha,
-      'laboratorio' => $laboratorio,
-      'comentario' => $comentario
+
+      'fich_fecha' => $fecha,
+      'fich_obs' => $comentario,
+      'ficha_Dr' => $profesional,
+      'ficha_paciente' => $nombre,
+      'ficha_lab' => $laboratorio
+      
     );
 
-    $this->db->insert('ficha_tratamiento', $data);
+    $this->db->insert('ficha_lenguaje', $data);
   }
 }
 ?>

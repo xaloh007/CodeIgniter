@@ -125,6 +125,8 @@ class Controlador1 extends CI_Controller{
 	
 	//$this->load->view('Pagina/footer');
 	}
+
+
    function crearficha() {
   $this->load->helper('form');
   $this->load->library('form_validation');
@@ -136,7 +138,7 @@ class Controlador1 extends CI_Controller{
   $this->form_validation->set_rules('comentario', 'Comentario', 'required');
 
   if ($this->form_validation->run() == FALSE) {
-    $this->load->view('usuario/crear');
+    $this->load->view('Pagina/preguntas');
   } else {
     $nombre = $this->input->post('nombre');
     $profesional = $this->input->post('profesional');
@@ -145,7 +147,9 @@ class Controlador1 extends CI_Controller{
     $comentario = $this->input->post('comentario');
     $this->load->model('ficha_model');
     $this->ficha_model->crearFicha($nombre,$profesional, $fecha, $laboratorio, $comentario);
+   $this->load->view('Pagina/preguntas');
     echo 'Ficha insertada';
+    
   }
 }
 }
