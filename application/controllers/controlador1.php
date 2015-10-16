@@ -6,6 +6,7 @@ class Controlador1 extends CI_Controller{
 		parent::__construct();
 		$this->load->helper('form');
 		$this->load->model('len_model');
+		$this->load->model('nino_model');
 
 	}
 	function index(){
@@ -53,6 +54,28 @@ class Controlador1 extends CI_Controller{
 		}
 		else
 		{
+			$nombre= $this->input->post('nombre');
+			$edad= $this->input->post('edad');
+			$rut= $this->input->post('rut');
+			$sexo= $this->input->post('sexo');
+			$fam= $this->input->post('fam');
+			$escolaridad= $this->input->post('escolaridad');
+			$colegio= $this->input->post('colegio');
+			$direccion= $this->input->post('direccion');
+			$comuna= $this->input->post('comuna');
+			$region= $this->input->post('region');
+			$tratamiento= $this->input->post('tratamiento');
+			$notas= $this->input->post('notas');
+
+
+
+
+			$this->load->model('nino_model');
+			$this->nino_model->crearAnam($nombre,$edad,$rut,$sexo,$fam,$escolaridad,$colegio,$direccion,$comuna,$region,$tratamiento,$notas);
+			$this->load->view('Pagina/ingreso');
+			echo 'anamnesis OK';
+
+
 
 			echo "Totos los datos estan ok: ".$this->input->post('nombre');
 			//$this->load->view('formsuccess');
