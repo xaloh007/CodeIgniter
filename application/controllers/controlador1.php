@@ -6,6 +6,7 @@ class Controlador1 extends CI_Controller{
 		parent::__construct();
 		$this->load->helper('form');
 		$this->load->model('len_model');
+		$this->load->model('nino_model');
 
 	}
 	function index(){
