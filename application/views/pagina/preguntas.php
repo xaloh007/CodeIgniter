@@ -12,12 +12,17 @@
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
 <link href="http://localhost/codeigniter/css/default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="http://localhost/codeigniter/fonts/fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
 <!--MENU-->
 </head>
-<body>
+
 <div id="header-wrapper">
 	<div id="header" >
 		
@@ -35,10 +40,85 @@
 		</div>
 	</div>
 </div>
-<div class="wrapper">
-	<div class="embed-responsive embed-responsive-16by9">
-<iframe class="embed-responsive-item" src="crud/pro.html" width="100%" height="500"></iframe>
-</div>
+<body>
+
+
+<div class="bs-example">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. Ficha Tratamiento Adulto</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    
+					<h1>Crear Ficha de tratamiento Adulto</h1>
+					    <?php
+					    echo validation_errors();
+					    echo form_open('controlador1/crearficha');
+					    echo form_label('Nombre', 'nombre');
+					    echo form_input('nombre');
+					    echo form_label('Profesional', 'profesional');
+					    echo form_input('profesional');
+					    echo form_label('Fecha', 'fecha');
+					    echo form_input('fecha');
+					    echo '<br>';
+					    echo form_label('Laboratorio', 'laboratorio');
+					    echo form_input('laboratorio');
+					    echo '<br>';
+					    echo form_label('Comentario', 'comentario');
+					    echo form_textarea('comentario');
+					    echo '<br>';
+					    echo form_submit('botonSubmit', 'Enviar');
+					    echo form_close();
+					    ?>
+					-->
+
+                    </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. Ficha de tratamiento Niño</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                   <h1>Crear Ficha de tratamiento Niño</h1>
+				    <?php
+				    echo validation_errors();
+				    echo form_open('controlador1/crearficha_nino');
+				    echo form_label('Nombre', 'nombre');
+				    echo form_input('nombre');
+				    echo form_label('Profesional', 'profesional');
+				    echo form_input('profesional');
+				    echo form_label('Fecha', 'fecha');
+				    echo form_input('fecha');
+				    echo '<br>';
+				    echo form_label('Laboratorio', 'laboratorio');
+				    echo form_input('laboratorio');
+				    echo '<br>';
+				    echo form_label('Comentario', 'comentario');
+				    echo form_textarea('comentario');
+				    echo '<br>';
+				    echo form_submit('botonSubmit', 'Enviar');
+				    echo form_close();
+				    ?>
+
+
+
+                   </div>
+            </div>
+        </div>
+
+	</div>
+	</div>
+
+
 
 
 </body>
