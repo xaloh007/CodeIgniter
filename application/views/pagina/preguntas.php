@@ -32,7 +32,7 @@
 				<li><a href="http://localhost/codeigniter/index.php/controlador1" accesskey="1" title="">Inicio</a></li>
 				<li><a href="http://localhost/codeigniter/index.php/controlador1/login" accesskey="2" title="">Iniciar Sesion</a></li>
 				<li><a href="http://localhost/codeigniter/index.php/controlador1/ingreso" accesskey="3" title="">Ingreso de Ficha</a></li>
-				<li><a href="http://localhost/codeigniter/index.php/controlador1/consulta" accesskey="4" title="">Consultar Ficha</a></li>
+				<li><a href="http://localhost/codeigniter/index.php/controlador1/administracion" accesskey="4" title="">Consultar Ficha</a></li>
 				<li><a href="http://localhost/codeigniter/index.php/controlador1/modificar" accesskey="5" title="">Modificar Ficha</a></li>
 				<li class="active"><a href="http://localhost/codeigniter/index.php/controlador1/preguntas" accesskey="6" title="">Ficha de Tratamiento</a></li>
 
@@ -48,47 +48,12 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. Ficha Tratamiento Adulto</a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. Ficha Tratamiento</a>
                 </h4>
             </div>
             <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
-                    
-					<h1>Crear Ficha de tratamiento Adulto</h1>
-					    <?php
-					    echo validation_errors();
-					    echo form_open('controlador1/crearficha');
-					    echo form_label('Nombre', 'nombre');
-					    echo form_input('nombre');
-					    echo form_label('Profesional', 'profesional');
-					    echo form_input('profesional');
-					    echo form_label('Fecha', 'fecha');
-					    echo form_input('fecha');
-					    echo '<br>';
-					    echo form_label('Laboratorio', 'laboratorio');
-					    echo form_input('laboratorio');
-					    echo '<br>';
-					    echo form_label('Comentario', 'comentario');
-					    echo form_textarea('comentario');
-					    echo '<br>';
-					    echo form_submit('botonSubmit', 'Enviar');
-					    echo form_close();
-					    ?>
-					-->
-
-                    </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. Ficha de tratamiento Niño</a>
-                </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
-
-                   <h1>Crear Ficha de tratamiento Niño</h1>
+                           <h1>Crear Ficha de tratamiento </h1>
 				    <?php
 				    echo validation_errors();
 				    echo form_open('controlador1/crearficha_nino');
@@ -109,6 +74,41 @@
 				    echo form_close();
 				    ?>
 
+					-->
+
+                    </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. Ficha de tratamiento Adulto</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+
+            
+					<h1>Crear Ficha de tratamiento Adulto</h1>
+					    <?php
+					    echo validation_errors();
+					    echo form_open('controlador1/crearficha');
+					    echo form_label('Nombre', 'nombre');
+					    echo form_input('nombre');
+					    echo form_label('Profesional', 'profesional');
+					    echo form_input('profesional');
+					    echo form_label('Fecha', 'fecha');
+					    echo form_input('fecha');
+					    echo '<br>';
+					    echo form_label('Laboratorio', 'laboratorio');
+					    echo form_input('laboratorio');
+					    echo '<br>';
+					    echo form_label('Comentario', 'comentario');
+					    echo form_textarea('comentario');
+					    echo '<br>';
+					    echo form_submit('botonSubmit', 'Enviar');
+					    echo form_close();
+					    ?>
 
 
                    </div>
