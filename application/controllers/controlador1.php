@@ -152,5 +152,31 @@ class Controlador1 extends CI_Controller{
     
   }
 }
+
+   function crearficha_nino() {
+  $this->load->helper('form');
+  $this->load->library('form_validation');
+
+  $this->form_validation->set_rules('nombre', 'Nombre', 'required');
+  $this->form_validation->set_rules('profesional', 'Profesional', 'required');
+  $this->form_validation->set_rules('fecha', 'Fecha', 'required');
+  $this->form_validation->set_rules('laboratorio', 'Laboratorio', 'required');
+  $this->form_validation->set_rules('comentario', 'Comentario', 'required');
+
+  if ($this->form_validation->run() == FALSE) {
+    $this->load->view('Pagina/preguntas');
+  } else {
+    $nombre = $this->input->post('nombre');
+    $profesional = $this->input->post('profesional');
+    $fecha = $this->input->post('fecha');
+    $laboratorio = $this->input->post('laboratorio');
+    $comentario = $this->input->post('comentario');
+    $this->load->model('ficha_model_nino');
+    $this->ficha_model_nino->crearFichanino($nombre,$profesional, $fecha, $laboratorio, $comentario);
+   $this->load->view('Pagina/preguntas');
+    echo 'Ficha insertada';
+    
+  }
+}
 }
 ?>

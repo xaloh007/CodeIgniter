@@ -41,7 +41,7 @@
 	</div>
 </div>
 <body>
-<div id="header-wrapper">
+
 
 <div class="bs-example">
     <div class="panel-group" id="accordion">
@@ -74,6 +74,7 @@
 					    echo form_submit('botonSubmit', 'Enviar');
 					    echo form_close();
 					    ?>
+					-->
 
                     </div>
             </div>
@@ -86,10 +87,11 @@
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
+
                    <h1>Crear Ficha de tratamiento Niño</h1>
 				    <?php
 				    echo validation_errors();
-				    echo form_open('controlador1/crearficha');
+				    echo form_open('controlador1/crearficha_nino');
 				    echo form_label('Nombre', 'nombre');
 				    echo form_input('nombre');
 				    echo form_label('Profesional', 'profesional');
